@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE4D4C9C2B3465D90041CC82 /* promova_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D4C9B2B3465D90041CC82 /* promova_testApp.swift */; };
+		CE4D4C9C2B3465D90041CC82 /* PromovaTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D4C9B2B3465D90041CC82 /* PromovaTestApp.swift */; };
 		CE4D4C9E2B3465D90041CC82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D4C9D2B3465D90041CC82 /* ContentView.swift */; };
 		CE4D4CA02B3465DF0041CC82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4D4C9F2B3465DF0041CC82 /* Assets.xcassets */; };
 		CE4D4CA32B3465DF0041CC82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4D4CA22B3465DF0041CC82 /* Preview Assets.xcassets */; };
+		CE4D4CAB2B3469A10041CC82 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = CE4D4CAA2B3469A10041CC82 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE4D4C982B3465D90041CC82 /* promova-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "promova-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE4D4C9B2B3465D90041CC82 /* promova_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = promova_testApp.swift; sourceTree = "<group>"; };
+		CE4D4C9B2B3465D90041CC82 /* PromovaTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaTestApp.swift; sourceTree = "<group>"; };
 		CE4D4C9D2B3465D90041CC82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE4D4C9F2B3465DF0041CC82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4D4CA22B3465DF0041CC82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4D4CAB2B3469A10041CC82 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +53,7 @@
 		CE4D4C9A2B3465D90041CC82 /* promova-test */ = {
 			isa = PBXGroup;
 			children = (
-				CE4D4C9B2B3465D90041CC82 /* promova_testApp.swift */,
+				CE4D4C9B2B3465D90041CC82 /* PromovaTestApp.swift */,
 				CE4D4C9D2B3465D90041CC82 /* ContentView.swift */,
 				CE4D4C9F2B3465DF0041CC82 /* Assets.xcassets */,
 				CE4D4CA12B3465DF0041CC82 /* Preview Content */,
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = "promova-test";
+			packageProductDependencies = (
+				CE4D4CAA2B3469A10041CC82 /* ComposableArchitecture */,
+			);
 			productName = "promova-test";
 			productReference = CE4D4C982B3465D90041CC82 /* promova-test.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = CE4D4C8F2B3465D90041CC82;
+			packageReferences = (
+				CE4D4CA92B3469A10041CC82 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = CE4D4C992B3465D90041CC82 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4D4C9E2B3465D90041CC82 /* ContentView.swift in Sources */,
-				CE4D4C9C2B3465D90041CC82 /* promova_testApp.swift in Sources */,
+				CE4D4C9C2B3465D90041CC82 /* PromovaTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE4D4CA92B3469A10041CC82 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE4D4CAA2B3469A10041CC82 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4D4CA92B3469A10041CC82 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE4D4C902B3465D90041CC82 /* Project object */;
 }
