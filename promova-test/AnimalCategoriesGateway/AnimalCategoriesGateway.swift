@@ -4,18 +4,16 @@
 //
 
 import Foundation
-import Dependencies
+import ComposableArchitecture
 
 struct AnimalCategoriesGateway {
-  var fetch: () async throws -> String
+    var fetchCategories: () async throws -> IdentifiedArrayOf<AnimalCategoryModel>
 }
 
 extension AnimalCategoriesGateway: DependencyKey {
     static let liveValue = Self(
-        fetch: {
-            let (data, _) = try await URLSession.shared
-                .data(from: .init(string: "https://raw.githubusercontent.com/AppSci/promova-test-task-iOS/main/animals.json")!)
-            return String(decoding: data, as: UTF8.self)
+        fetchCategories: {
+            return try await AnimalCategoriesAPI().fetch()
         }
     )
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4517162B35C0830088AAEF /* AnimalCategoriesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4517152B35C0830088AAEF /* AnimalCategoriesFeature.swift */; };
 		CE4D4C9C2B3465D90041CC82 /* PromovaTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D4C9B2B3465D90041CC82 /* PromovaTestApp.swift */; };
 		CE4D4C9E2B3465D90041CC82 /* AnimalCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D4C9D2B3465D90041CC82 /* AnimalCategoriesView.swift */; };
 		CE4D4CA02B3465DF0041CC82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4D4C9F2B3465DF0041CC82 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE4517152B35C0830088AAEF /* AnimalCategoriesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoriesFeature.swift; sourceTree = "<group>"; };
 		CE4D4C982B3465D90041CC82 /* promova-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "promova-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4D4C9B2B3465D90041CC82 /* PromovaTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaTestApp.swift; sourceTree = "<group>"; };
 		CE4D4C9D2B3465D90041CC82 /* AnimalCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoriesView.swift; sourceTree = "<group>"; };
@@ -62,8 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				CE87F0F72B34D6EA00E4228E /* AnimalCategoriesGateway */,
-				CE87F0F42B34C7C000E4228E /* AnimalCategoryItem */,
-				CE4D4C9D2B3465D90041CC82 /* AnimalCategoriesView.swift */,
+				CE87F0F42B34C7C000E4228E /* AnimalCategoriesUI */,
 				CE4D4C9B2B3465D90041CC82 /* PromovaTestApp.swift */,
 				CE4D4C9F2B3465DF0041CC82 /* Assets.xcassets */,
 				CE4D4CA12B3465DF0041CC82 /* Preview Content */,
@@ -79,18 +80,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CE87F0F42B34C7C000E4228E /* AnimalCategoryItem */ = {
+		CE87F0F42B34C7C000E4228E /* AnimalCategoriesUI */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D4C9D2B3465D90041CC82 /* AnimalCategoriesView.swift */,
 				CE9C228D2B3478B70007A2F4 /* AnimalCategoryView.swift */,
-				CE87F0F52B34C7D500E4228E /* AnimalCategoryModel.swift */,
+				CE4517152B35C0830088AAEF /* AnimalCategoriesFeature.swift */,
 			);
-			path = AnimalCategoryItem;
+			path = AnimalCategoriesUI;
 			sourceTree = "<group>";
 		};
 		CE87F0F72B34D6EA00E4228E /* AnimalCategoriesGateway */ = {
 			isa = PBXGroup;
 			children = (
+				CE87F0F52B34C7D500E4228E /* AnimalCategoryModel.swift */,
 				CE87F0F82B35888600E4228E /* AnimalCategoriesGateway.swift */,
 				CE87F0FA2B358D6200E4228E /* AnimalCategoriesAPI.swift */,
 			);
@@ -179,6 +182,7 @@
 				CE87F0F62B34C7D500E4228E /* AnimalCategoryModel.swift in Sources */,
 				CE87F0FB2B358D6200E4228E /* AnimalCategoriesAPI.swift in Sources */,
 				CE4D4C9C2B3465D90041CC82 /* PromovaTestApp.swift in Sources */,
+				CE4517162B35C0830088AAEF /* AnimalCategoriesFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

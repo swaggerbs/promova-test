@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import ComposableArchitecture
 
 struct AnimalCategoryResult: Decodable {
     
@@ -13,28 +14,28 @@ struct AnimalCategoryResult: Decodable {
     
     struct CategoryContent: Decodable {
         let fact: String
-        let imageUrl: URL
+        let image: URL
     }
     
     let title: String
     let description: String
-    let imageUrl: URL
+    let image: URL
     let order: Int
     let status: Status
-    let content: CategoryContent?
+    let content: [CategoryContent]?
 }
 
 struct AnimalCategoriesAPI {
     
     private let factory = AnimalCategoryFactory()
     
-    func fetch() async throws -> [AnimalCategoryModel] {
+    func fetch() async throws -> IdentifiedArrayOf<AnimalCategoryModel> {
         let url = URL(string: "https://raw.githubusercontent.com/AppSci/promova-test-task-iOS/main/animals.json")!
         let (data, _) = try await URLSession.shared.data(from: url)
         let result = try! JSONDecoder().decode([AnimalCategoryResult].self, from: data)
-        return result.map {
-            factory.makeModel(from: $0)
-        }
+        let sorted = result.sorted { $0.order > $1.order }
+        let models = sorted.map { factory.makeModel(from: $0) }
+        return IdentifiedArrayOf<AnimalCategoryModel>(uniqueElements: models, id: \.id)
     }
     
 }
@@ -57,7 +58,7 @@ struct AnimalCategoryFactory {
             name: result.title,
             description: result.description,
             state: state,
-            imageUrl: result.imageUrl
+            imageUrl: result.image
         )
     }
 }

@@ -16,7 +16,7 @@ struct AnimalCategoryView: View {
                     image
                       .resizable()
                       .aspectRatio(contentMode: .fill)
-                      .frame(width: imageWidth)
+                      .frame(width: imageWidth, height: height - padding.top - padding.bottom)
                       .clipped()
                 } placeholder: {
                     Color.gray
@@ -29,12 +29,15 @@ struct AnimalCategoryView: View {
             if model.state == .comingSoon {
                 Rectangle()
                     .foregroundColor(.black.opacity(0.4))
-                Image("ComingSoon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                HStack {
+                    Image("ComingSoon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Spacer()
+                }
             }
         }
-        
+        .frame(height: height)
     }
     
     @ViewBuilder
@@ -83,6 +86,7 @@ private extension AnimalCategoryView {
         bottom: 6,
         trailing: 6)
     }
+    private var height: CGFloat { 100 }
 }
 
 // MARK: - Preview
