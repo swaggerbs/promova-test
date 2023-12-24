@@ -11,6 +11,9 @@ struct AnimalCategoryDetailsFeature {
     struct State: Equatable {
         @BindingState var currentFactIndex: Int = 0
         var facts: [FactModel]
+        var currentFact: FactModel {
+            facts[currentFactIndex]
+        }
     }
     
     enum Action: BindableAction {

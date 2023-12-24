@@ -18,6 +18,7 @@
 		CE87F0F92B35888600E4228E /* AnimalCategoriesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0F82B35888600E4228E /* AnimalCategoriesGateway.swift */; };
 		CE87F0FB2B358D6200E4228E /* AnimalCategoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87F0FA2B358D6200E4228E /* AnimalCategoriesAPI.swift */; };
 		CE8ADEFC2B3877A200F659A6 /* AnimalCategoryDetailsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8ADEFB2B3877A200F659A6 /* AnimalCategoryDetailsFeature.swift */; };
+		CE8ADF012B38C4C300F659A6 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8ADF002B38C4C300F659A6 /* ActivityView.swift */; };
 		CE9C228E2B3478B70007A2F4 /* AnimalCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C228D2B3478B70007A2F4 /* AnimalCategoryView.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		CE87F0F82B35888600E4228E /* AnimalCategoriesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoriesGateway.swift; sourceTree = "<group>"; };
 		CE87F0FA2B358D6200E4228E /* AnimalCategoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoriesAPI.swift; sourceTree = "<group>"; };
 		CE8ADEFB2B3877A200F659A6 /* AnimalCategoryDetailsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoryDetailsFeature.swift; sourceTree = "<group>"; };
+		CE8ADF002B38C4C300F659A6 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		CE9C228D2B3478B70007A2F4 /* AnimalCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 		CE4D4C9A2B3465D90041CC82 /* promova-test */ = {
 			isa = PBXGroup;
 			children = (
+				CE8ADF022B38C4DA00F659A6 /* UIKitHelpers */,
 				CE8ADEFF2B387A5000F659A6 /* Gateways */,
 				CE8ADEFE2B387A4600F659A6 /* UI */,
 				CE4D4C9B2B3465D90041CC82 /* PromovaTestApp.swift */,
@@ -128,6 +131,14 @@
 				CE87F0F72B34D6EA00E4228E /* AnimalCategoriesGateway */,
 			);
 			path = Gateways;
+			sourceTree = "<group>";
+		};
+		CE8ADF022B38C4DA00F659A6 /* UIKitHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE8ADF002B38C4C300F659A6 /* ActivityView.swift */,
+			);
+			path = UIKitHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				CE9C228E2B3478B70007A2F4 /* AnimalCategoryView.swift in Sources */,
 				CE87F0F92B35888600E4228E /* AnimalCategoriesGateway.swift in Sources */,
 				CE4D4C9E2B3465D90041CC82 /* AnimalCategoriesView.swift in Sources */,
+				CE8ADF012B38C4C300F659A6 /* ActivityView.swift in Sources */,
 				CE8ADEFC2B3877A200F659A6 /* AnimalCategoryDetailsFeature.swift in Sources */,
 				CE87F0F62B34C7D500E4228E /* AnimalCategoryModel.swift in Sources */,
 				CE87F0FB2B358D6200E4228E /* AnimalCategoriesAPI.swift in Sources */,
