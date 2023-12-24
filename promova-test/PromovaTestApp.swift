@@ -8,6 +8,7 @@ import ComposableArchitecture
 
 @main
 struct PromovaTestApp: App {
+
     var body: some Scene {
         WindowGroup {
             AnimalCategoriesView(

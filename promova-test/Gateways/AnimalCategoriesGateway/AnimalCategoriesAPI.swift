@@ -51,14 +51,24 @@ struct AnimalCategoryFactory {
         case .free:
             state = .free
         }
-        if result.content == nil {
+        var factModels: [FactModel] = []
+        if let content = result.content {
+            factModels = content.map {
+                makeFactModel(from: $0)
+            }
+        } else {
             state = .comingSoon
         }
         return AnimalCategoryModel(
             name: result.title,
             description: result.description,
             state: state,
-            imageUrl: result.image
+            imageUrl: result.image, 
+            facts: factModels
         )
+    }
+    
+    private func makeFactModel(from result: AnimalCategoryResult.CategoryContent) -> FactModel {
+        FactModel(content: result.fact, imageUrl: result.image)
     }
 }

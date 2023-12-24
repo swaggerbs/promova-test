@@ -28,7 +28,7 @@ struct AnimalCategoryView: View {
             .padding(padding)
             if model.state == .comingSoon {
                 Rectangle()
-                    .foregroundColor(.black.opacity(0.4))
+                    .foregroundColor(.black.opacity(0.2))
                 HStack {
                     Image("ComingSoon")
                         .resizable()
@@ -96,7 +96,8 @@ private extension AnimalCategoryView {
         name: "Mock Category",
         description: "Pretty good mock Animal",
         state: .free,
-        imageUrl: nil
+        imageUrl: nil, 
+        facts: []
     )
     return AnimalCategoryView(model: mockModel)
 }
@@ -106,7 +107,7 @@ private extension AnimalCategoryView {
         name: "Mock Category",
         description: "Pretty good mock Animal",
         state: .paid,
-        imageUrl: nil
+        imageUrl: nil, facts: []
     )
     return AnimalCategoryView(model: mockPaidModel)
 }
@@ -116,7 +117,8 @@ private extension AnimalCategoryView {
         name: "Mock Category",
         description: "Pretty good mock Animal",
         state: .comingSoon,
-        imageUrl: nil
+        imageUrl: nil, 
+        facts: []
     )
     return AnimalCategoryView(model: mockPaidModel)
 }
