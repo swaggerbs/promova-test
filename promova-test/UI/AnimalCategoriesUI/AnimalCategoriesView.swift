@@ -22,23 +22,28 @@ struct AnimalCategoriesView: View {
             ZStack {
                 List {
                     ForEach(viewStore.categories, id: \.id) { category in
-                        AnimalCategoryView(model: category)
-                            .overlay {
-                                NavigationLink {
-                                    makeDetailsView(category)
-                                } label: {
-                                    EmptyView()
+                        NavigationLink(
+                            tag: category.id,
+                            selection: viewStore.binding(
+                                get: \.selection?.id,
+                                send: {
+                                    .didItemTapped($0)
                                 }
-                                .opacity(0)
+                            )
+                        ) {
+                            IfLetStore(self.store.scope(state: \.detailItem, action: \.detailItem)) {
+                                AnimalCategoryDetailsView(store: $0)
                             }
-                            .listRowInsets(EdgeInsets())
-                            .listRowSeparator(.hidden)
+                        } label: {
+                            AnimalCategoryView(model: category)
+                        }  
                     }
                 }
                 if viewStore.isLoading {
                     ProgressView()
                 }
             }
+            
         }
     }
     
