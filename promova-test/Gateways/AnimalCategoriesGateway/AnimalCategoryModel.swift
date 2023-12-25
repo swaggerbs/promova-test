@@ -16,7 +16,7 @@ struct AnimalCategoryModel: Identifiable, Equatable {
     let id = UUID()
     let name: String
     let description: String
-    let state: CategoryState
+    var state: CategoryState
     let imageUrl: URL?
     let facts: [FactModel]
 }

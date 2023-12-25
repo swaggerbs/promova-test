@@ -22,29 +22,42 @@ struct AnimalCategoriesView: View {
             ZStack {
                 List {
                     ForEach(viewStore.categories, id: \.id) { category in
-                        NavigationLink(
-                            tag: category.id,
-                            selection: viewStore.binding(
-                                get: \.selection?.id,
-                                send: {
-                                    .didItemTapped($0)
+                        AnimalCategoryView(model: category)
+                            .overlay {
+                                NavigationLink(
+                                    tag: category.id,
+                                    selection: viewStore.binding(
+                                        get: \.selection?.id,
+                                        send: {
+                                            .didItemTapped($0)
+                                        }
+                                    )
+                                ) {
+                                    IfLetStore(self.store.scope(state: \.detailItem, action: \.detailItem)) {
+                                        AnimalCategoryDetailsView(store: $0)
+                                    }
+                                } label: {
+                                    EmptyView()
                                 }
-                            )
-                        ) {
-                            IfLetStore(self.store.scope(state: \.detailItem, action: \.detailItem)) {
-                                AnimalCategoryDetailsView(store: $0)
+                                .opacity(0)
                             }
-                        } label: {
-                            AnimalCategoryView(model: category)
-                        }  
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets())
+                        
                     }
                 }
                 if viewStore.isLoading {
+                    Color(UIColor.systemBackground)
                     ProgressView()
                 }
             }
-            
         }
+        .alert(
+            store: store.scope(state: \.$alert, action: \.alert)
+        )
+        .alert(
+            store: store.scope(state: \.$advertAlert, action: \.advertAlert)
+        )
     }
     
     @ViewBuilder
